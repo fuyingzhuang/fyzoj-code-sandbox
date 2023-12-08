@@ -9,13 +9,29 @@ import lombok.Data;
  */
 @Data
 public class ExecuteMessage {
+    /**
+     * 退出值
+     */
     private Integer exitValue;
 
+    /**
+     * 信息
+     */
     private String message;
 
+    /**
+     * 错误信息
+     */
+
     private String errorMessage;
+    /**
+     * 时间
+     */
 
     private Long time;
+    /**
+     * 内存
+     */
 
     private Long memory;
 
