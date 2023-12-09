@@ -18,6 +18,7 @@ import java.util.UUID;
 /**
  * @author Ambition
  * @date 2023/12/7 22:11
+ * 抽象模板方法
  */
 @Slf4j
 public abstract class JavaCodeSandboxTemplate implements CodeSandbox {
