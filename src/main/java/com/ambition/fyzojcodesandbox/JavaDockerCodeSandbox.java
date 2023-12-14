@@ -49,9 +49,10 @@ public class JavaDockerCodeSandbox extends JavaCodeSandboxTemplate {
 
     /**
      * 3、创建容器，把文件复制到容器内
-     * @param userCodeFile
-     * @param inputList
-     * @return
+     *
+     * @param userCodeFile 用户代码文件
+     * @param inputList    输入
+     * @return 执行结果
      */
     @Override
     public List<ExecuteMessage> runFile(File userCodeFile, List<String> inputList) {

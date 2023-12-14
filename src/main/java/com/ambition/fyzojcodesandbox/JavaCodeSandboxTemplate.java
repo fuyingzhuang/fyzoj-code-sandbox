@@ -112,20 +112,19 @@ public abstract class JavaCodeSandboxTemplate implements CodeSandbox {
 
         List<ExecuteMessage> executeMessageList = new ArrayList<>();
         for (String inputArgs : inputList) {
-//            String runCmd = String.format("java -Xmx256m -Dfile.encoding=UTF-8 -cp %s Main %s", userCodeParentPath, inputArgs);
             String runCmd = String.format("java -Xmx256m -Dfile.encoding=UTF-8 -cp %s Main %s", userCodeParentPath, inputArgs);
             try {
                 Process runProcess = Runtime.getRuntime().exec(runCmd);
                 // 超时控制
-                new Thread(() -> {
-                    try {
-                        Thread.sleep(TIME_OUT);
-                        System.out.println("超时了，中断");
-                        runProcess.destroy();
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
-                }).start();
+//                new Thread(() -> {
+//                    try {
+//                        Thread.sleep(TIME_OUT);
+//                        System.out.println("超时了，中断");
+//                        runProcess.destroy();
+//                    } catch (InterruptedException e) {
+//                        throw new RuntimeException(e);
+//                    }
+//                }).start();
                 ExecuteMessage executeMessage = ProcessUtils.runProcessAndGetMessage(runProcess, "运行");
                 System.out.println(executeMessage);
                 executeMessageList.add(executeMessage);

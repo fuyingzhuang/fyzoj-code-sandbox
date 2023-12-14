@@ -23,6 +23,9 @@ public class MainController {
 
     private static final String AUTH_REQUEST_SECRET = "secretKey";
 
+    @Resource
+    private JavaNativeCodeSandbox javaNativeCodeSandbox;
+
 
     @GetMapping("/health")
     public String getHealth() {
@@ -30,19 +33,11 @@ public class MainController {
     }
 
 
-    @Resource
-    private JavaNativeCodeSandbox javaNativeCodeSandbox;
-
-    @GetMapping("/health")
-    public String healthCheck() {
-        return "ok";
-    }
-
     /**
      * 执行代码
      *
-     * @param executeCodeRequest
-     * @return
+     * @param executeCodeRequest 请求参数
+     * @return 执行结果
      */
     @PostMapping("/executeCode")
     ExecuteCodeResponse executeCode(@RequestBody ExecuteCodeRequest executeCodeRequest, HttpServletRequest request,
