@@ -106,6 +106,7 @@ public class JavaDockerCodeSandbox extends JavaCodeSandboxTemplate {
 
         // 启动容器
         dockerClient.startContainerCmd(containerId).exec();
+        
 
         // docker exec keen_blackwell java -cp /app Main 1 3
         // 执行命令并获取结果
